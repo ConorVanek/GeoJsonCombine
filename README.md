@@ -1,7 +1,7 @@
 # GeoJsonCombine
 A c# program to combine neighboring GeoJson polygons.
 
-The goal of this program is to recursively combine neighboring polygons into one shape until there are no more shapes that can be combined. Here are the steps:
+The goal of this program is to recursively combine neighboring polygons into one shape until there are no more shapes that can be combined. It essentially combines a pair of shapes by slightly stretching both polygons, removing any points which overlap into the other shape, and then tracing out the remaining points into a new polygon, preserving the counter-clockwise order of the points. Here are the steps:
 
 For each shape A in the directory…
 1.	Find a shape B that is next to it, i.e., a shape that can be combined with it. If there is not one, do nothing and move on to the next shape.
